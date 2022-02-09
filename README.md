@@ -5,7 +5,7 @@ Stupid-easy Modal Implementation for Slack
 `npm install slack-modalizer`
 
 ## Attach to Slack App as middleware 
-```
+```javascript
 // Instantiate your Slack App however you'd like
 const { App } = require('@slack/bolt');
 const app = new App({
@@ -25,8 +25,9 @@ app.use(async ({ ack, body, context, client, next }) => {
 });
 ```
 
-## Pop up a modal, in any context 
-```
+## Pop up a modal, in any context within your controllers
+[modalView payload](https://app.slack.com/block-kit-builder/TUGQTUCUT#%7B%22title%22:%7B%22type%22:%22plain_text%22,%22text%22:%22Modalizer%22,%22emoji%22:true%7D,%22submit%22:%7B%22type%22:%22plain_text%22,%22text%22:%22Submit%22,%22emoji%22:true%7D,%22type%22:%22modal%22,%22callback_id%22:%22slack_modalizer_rules%22,%22close%22:%7B%22type%22:%22plain_text%22,%22text%22:%22Cancel%22,%22emoji%22:true%7D,%22blocks%22:%5B%7B%22type%22:%22section%22,%22text%22:%7B%22type%22:%22mrkdwn%22,%22text%22:%22Woohoo!%20#MakeModalsEasyAgain%20%F0%9F%8E%89%20%F0%9F%A5%B3%22%7D%7D%5D%7D)
+```javascript
 app.action('main_screen', async ({ context }) => {
   // can be invoked from an action in an existing modal
   // or from a message action 
