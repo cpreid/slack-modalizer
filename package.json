@@ -1,6 +1,6 @@
 {
   "name": "slack-modalizer",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Stupid-easy Modal Implementation for Slack",
   "main": "index.js",
   "scripts": {

@@ -1,7 +1,13 @@
+class ModalizerError extends Error {}
+
 class Modalizer {
   lastModalId;
 
-  constructor({body, client, context, ack}) {
+  constructor({body, client, context, ack}) {    
+    if(!body || !client || !context || !ack) {
+      throw new ModalizerError('You must provide the following arguments {body, client, context, ack}');
+    }
+
     this.request = {body, client, context};
 
     // enrich context with this nifty method to ensure a one-time ack
