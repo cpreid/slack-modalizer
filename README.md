@@ -6,10 +6,10 @@ Stupid-easy Modal Implementation for Slack
 
 ## Attach to Slack App as middleware 
 ```javascript
-// Instantiate your Slack App however you'd like
 const { App } = require('@slack/bolt');
 const { Modalizer } = require('slack-modalizer');
 
+// Instantiate your Slack App however you'd like
 const app = new App({
   token: process.env.SLACK_BOT_TOKEN,
   signingSecret: process.env.SLACK_SIGNING_SECRET
