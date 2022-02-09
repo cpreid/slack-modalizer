@@ -17,12 +17,7 @@ const app = new App({
 
 // Attach to Slack App as middleware 
 app.use(async ({ ack, body, context, client, next }) => {
-  context.modalizer = new Modalizer({body, client, context});
-  context.ackOnce = async function() {
-    if(context.acked) return;
-    await ack.apply(null, arguments); 
-    context.acked = true;
-  }
+  context.modalizer = new Modalizer({body, client, context, ack});
   await next();
 });
 ```
