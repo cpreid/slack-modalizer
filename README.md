@@ -2,7 +2,7 @@
 Stupid-easy Modal Implementation for Slack
 
 ## Installation
-`npm install slack-modalizer`
+`npm install slack-modalizer --save`
 
 ## Attach to Slack App as middleware 
 ```javascript
