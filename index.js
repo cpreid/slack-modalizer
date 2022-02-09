@@ -5,7 +5,7 @@ class Modalizer {
 
   constructor({body, client, context, ack}) {    
     if(!body || !client || !context || !ack) {
-      throw new ModalizerError('You must provide the following arguments {body, client, context, ack}');
+      throw new ModalizerError('[ModalizerError] You must provide the following arguments in your middleware: {body, client, context, ack}');
     }
 
     this.request = {body, client, context};
